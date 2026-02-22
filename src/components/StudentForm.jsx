@@ -44,6 +44,7 @@ function StudentForm() {
         placeholder="Full Name"
         value={values.name}
         onChange={handleChange}
+        required
       />
 
       <input
@@ -51,6 +52,7 @@ function StudentForm() {
         placeholder="Email Address"
         value={values.email}
         onChange={handleChange}
+        required
       />
 
       <input
@@ -58,6 +60,7 @@ function StudentForm() {
         placeholder="Major"
         value={values.major}
         onChange={handleChange}
+        required
       />
 
       <input
@@ -67,6 +70,7 @@ function StudentForm() {
         placeholder="GPA (0 - 4)"
         value={values.gpa}
         onChange={handleChange}
+        required
       />
 
       <button type="submit">Register Student</button>

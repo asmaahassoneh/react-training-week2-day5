@@ -5,7 +5,7 @@ export function StudentProvider({ children }) {
   const [students, setStudents] = useLocalStorage("students", []);
 
   const addStudent = (student) => {
-    const newStudent = { ...student, id: Date.now() };
+    const newStudent = { ...student, id: crypto.randomUUID() };
     setStudents((prev) => [...prev, newStudent]);
   };
 

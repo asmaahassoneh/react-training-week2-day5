@@ -1,8 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useStudents } from "../context/useStudents";
 
-function StudentList({ students }) {
-  const { deleteStudent } = useStudents();
+function StudentList({ students, onDelete }) {
   const navigate = useNavigate();
 
   if (students.length === 0) {
@@ -33,9 +31,7 @@ function StudentList({ students }) {
                 <button onClick={() => navigate(`/students/${student.id}`)}>
                   View
                 </button>
-                <button onClick={() => deleteStudent(student.id)}>
-                  Delete
-                </button>
+                <button onClick={() => onDelete(student.id)}>Delete</button>
               </td>
             </tr>
           ))}

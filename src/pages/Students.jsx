@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useStudents } from "../context/useStudents";
 
 function Students() {
-  const { students } = useStudents();
+  const { students, deleteStudent } = useStudents();
 
   const [search, setSearch] = useState("");
   const [filterMajor, setFilterMajor] = useState("");
@@ -43,7 +43,7 @@ function Students() {
         />
       </div>
 
-      <StudentList students={filteredStudents} />
+      <StudentList students={filteredStudents} onDelete={deleteStudent} />
 
       <ToastContainer />
     </div>
